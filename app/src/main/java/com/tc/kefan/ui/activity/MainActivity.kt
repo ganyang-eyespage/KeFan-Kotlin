@@ -500,23 +500,25 @@ class MainActivity : BaseMvpActivity<MainContract.View, MainContract.Presenter>(
      * FAB 监听
      */
     private val onFABClickListener = View.OnClickListener {
-        when (mIndex) {
-            FRAGMENT_HOME -> {
-                mHomeFragment?.scrollToTop()
-            }
-            FRAGMENT_SQUARE -> {
-                mSquareFragment?.scrollToTop()
-            }
-            FRAGMENT_SYSTEM -> {
-                mSystemFragment?.scrollToTop()
-            }
-            FRAGMENT_PROJECT -> {
-                mProjectFragment?.scrollToTop()
-            }
-            FRAGMENT_WECHAT -> {
-                mWeChatFragment?.scrollToTop()
-            }
-        }
+        //TODO: TUCAI 临时改变入口
+        startActivity(Intent(this@MainActivity, TCListActivity::class.java))
+//        when (mIndex) {
+//            FRAGMENT_HOME -> {
+//                mHomeFragment?.scrollToTop()
+//            }
+//            FRAGMENT_SQUARE -> {
+//                mSquareFragment?.scrollToTop()
+//            }
+//            FRAGMENT_SYSTEM -> {
+//                mSystemFragment?.scrollToTop()
+//            }
+//            FRAGMENT_PROJECT -> {
+//                mProjectFragment?.scrollToTop()
+//            }
+//            FRAGMENT_WECHAT -> {
+//                mWeChatFragment?.scrollToTop()
+//            }
+//        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
