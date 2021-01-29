@@ -18,7 +18,6 @@ import com.tc.kefan.ui.activity.CommonActivity
 import com.tc.kefan.ui.activity.ContentActivity
 import com.tc.kefan.utils.CacheDataUtil
 import com.tc.kefan.widget.IconPreference
-import com.tencent.bugly.beta.Beta
 import io.reactivex.Observable
 import org.greenrobot.eventbus.EventBus
 import java.util.concurrent.TimeUnit
@@ -100,7 +99,6 @@ class SettingFragment : PreferenceFragment(), SharedPreferences.OnSharedPreferen
         }
 
         findPreference("version").setOnPreferenceClickListener {
-            Beta.checkUpgrade()
             false
         }
 

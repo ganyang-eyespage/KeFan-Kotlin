@@ -10,7 +10,6 @@
 /.idea/
 /gradlew
 /gradlew.bat
-app/bugly/
 build/
 local.properties
 gradle.properties

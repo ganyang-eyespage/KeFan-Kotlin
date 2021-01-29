@@ -29,7 +29,6 @@ import com.tc.kefan.ui.setting.SettingActivity
 import com.tc.kefan.utils.DialogUtil
 import com.tc.kefan.utils.Preference
 import com.tc.kefan.utils.SettingUtil
-import com.tencent.bugly.beta.Beta
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
 import org.greenrobot.eventbus.EventBus
@@ -95,7 +94,6 @@ class MainActivity : BaseMvpActivity<MainContract.View, MainContract.Presenter>(
     override fun useEventBus(): Boolean = true
 
     override fun initData() {
-        Beta.checkUpgrade(false, false)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

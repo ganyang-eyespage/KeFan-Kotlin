@@ -47,19 +47,6 @@ android {
             shrinkResources true // 自动清理无用资源
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
-            android.applicationVariants.all { variant ->
-                // 更新至Android Studio 3.3 gradle 4.10.1
-                variant.outputs.all {
-                    outputFileName = "Kefan_${defaultConfig.versionName}_${variant.buildType.name}.apk"
-                }
-//                variant.outputs.all { output ->
-//                    def outputFile = output.outputFile
-//                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
-//                        def fileName = "WanAndroid-release.apk"
-//                        outputFileName = fileName
-//                    }
-//                }
-            }
         }
         debug {
             resValue("string", "PORT_NUMBER", "8081")
@@ -86,10 +73,16 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility JavaVersion.VERSION_1_8
     }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "Kefan_${defaultConfig.versionName}_${variant.buildType.name}_${releaseTime()}.apk"
+        }
+    }
 }
 
 static def releaseTime() {
-    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+    return new Date().format("yyyy-MM-dd.HH-mm", TimeZone.getTimeZone("GMT+8"))
 }
 
 dependencies {
