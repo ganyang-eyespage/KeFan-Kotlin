@@ -28,7 +28,7 @@ class App : Application() {
     private var refWatcher: RefWatcher? = null
 
     companion object {
-        val TAG = "wan_android"
+        val TAG = "wan_android——test"
 
         var context: Context by Delegates.notNull()
             private set
